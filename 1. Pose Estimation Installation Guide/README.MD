@@ -5,17 +5,17 @@ Hey guys and welcome back in lecture I’m going to take through the installatio
 ## Downloading the repo:
 
 1.	Okay first we go to the Pose Estimation github page, we just type in tf pose estimation github. Or click the link attached to the course
-*	We will click on this link ildoonet
+	*	We will click on this link ildoonet
 	*	And then simply click to download the zip or if you want to be cool, you can do a git clone in anaconda prompt. 
 	*	Then lets create a folder where we can work from and call it pose estimation.
 	*	Let be cool and download it via git clone. Press enter and let it do its thing. https://github.com/ildoonet/tf-pose-estimation/tree/master/tf_pose
 
 2.	In the meantime we Download swig which is a tool that connects programs written in c and c++ with high level programming languages which in this case we are using python. 
-*	Type is swig for windows and click on the first link which say Getting Started on Windows – Swig
-*	Scroll down to 3.1 Installation on windows and click on Swig website link.
-*	Click download for the latest version
-*	From the check boxes select python and windows – submit
-*	Download area and then finally  swigwin-3.0.12 for windows. I’l have the direct link attached to this video. http://www.swig.org/download.html
+	*	Type is swig for windows and click on the first link which say Getting Started on Windows – Swig
+	*	Scroll down to 3.1 Installation on windows and click on Swig website link.
+	*	Click download for the latest version
+	*	From the check boxes select python and windows – submit
+	*	Download area and then finally  swigwin-3.0.12 for windows. I’l have the direct link attached to this video. http://www.swig.org/download.html
 	
 			
 3.	Once it has downloaded we can then copy and paste swig into our pose estimation workspace and Extract all the files.
@@ -39,13 +39,13 @@ Hey guys and welcome back in lecture I’m going to take through the installatio
 
 11.	Now for the exciting part, running our code. Ensure that you have any video handy to test your pose estimation with. And then we type in the following
 
-``` python run_webcam.py --camera=PATH_TO_VIDEO```  
+``` python run_webcam.py --camera=PATH_TO_VIDEO```  or ``` python run_webcam.py --camera=PATH_TO_VIDEO --model=cmu```
 
-or 
-
-``` python run_webcam.py --camera=PATH_TO_VIDEO --model=cmu```
+If you have the video in the same folder you can just type (for example):
+``` python run_webcam.py --camera video.mp4``` 
 
 12.	And for webcam ``` python run_webcam.py’ or ‘python run_webcam.py –model=cmu```
+
 And there you have it! Quick and easy pose estimation in under 10 minutes. In the following lectures I will show you how to build some really exciting apps like people counting, fall detection and even yoga pose correction. Hope you enjoyed this tutorial.
 Thank you for watching and we’ll see you in the next video. 
 
