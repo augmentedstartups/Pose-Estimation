@@ -1,11 +1,11 @@
-# INSTALLATION GUIDE OF POSE ESTIMATION
+# Installation Guide Of Pose Estimation
 
 Hey guys and welcome back in lecture I’m going to take through the installation of pose estimation step-by-step. What we will achieve by the end of this tutorial will be us running pose estimation on a video. Okay so lets get straight into it. 
 
 ## Downloading the repo:
 
 1.	Okay first we go to the Pose Estimation github page, we just type in tf pose estimation github. Or click the link attached to the course
-	*	We will click on this link ildoonet
+*	We will click on this link ildoonet
 	*	And then simply click to download the zip or if you want to be cool, you can do a git clone in anaconda prompt. 
 	*	Then lets create a folder where we can work from and call it pose estimation.
 	*	Let be cool and download it via git clone. Press enter and let it do its thing. https://github.com/ildoonet/tf-pose-estimation/tree/master/tf_pose
