@@ -42,6 +42,7 @@ Hey guys and welcome back in lecture I’m going to take through the installatio
 ``` python run_webcam.py --camera=PATH_TO_VIDEO```  or ``` python run_webcam.py --camera=PATH_TO_VIDEO --model=cmu```
 
 If you have the video in the same folder you can just type (for example):
+
 ``` python run_webcam.py --camera video.mp4``` 
 
 12.	And for webcam ``` python run_webcam.py’ or ‘python run_webcam.py –model=cmu```
