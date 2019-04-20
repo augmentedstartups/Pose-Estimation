@@ -29,6 +29,7 @@ So as you can see we are successfully detecting fall. Just keep in mind that the
 ## Tweaking the code
 
 Lets tweak the code to make it a bit more practical. First we are going to import OS,  which provides us a way of using operating system dependent functionality. 
+
 We’ll then add in some arguments that will allow us to save the processed video
 Now we add in a line that will display the detections to the video window rather than to console. We want the text to display fall Detected whenever the fall occurs.
 
@@ -37,28 +38,6 @@ And then finally we write out the following lines to record the video using the 
 Now we can run our fall detection again. You can see that it has mode selection for the app that we would like to run. We’ll select 2 for Fall Detection and press enter to run.
 
 Okay and there you have it. You can see that we are adequately detecting a person falling from video. Try this to your own video and see how well it works on your own apps.
-
-
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-•	Command to run: ‘python run_webcam.py --camera=PATH_TO_VIDEO  --model=cmu’(OPTIONAL) –save_video True
+*	Command to run: ```python run_webcam.py --camera=PATH_TO_VIDEO  --model=cmu’(OPTIONAL) –save_video True```
 
