@@ -38,7 +38,7 @@ the distance between those two points that we are looking at is saved to a varia
 
 ### Angle Calculations
 We can then calculate two angles, between the neck, elbow and shoulder for both the left and right hands respectively.  You can probably visualize it better from this chart over here. 
-![alt text](https://github.com/CMU-Perceptual-Computing-Lab/openpose/raw/master/doc/media/keypoints_pose_25.png)
+![alt text](https://github.com/CMU-Perceptual-Computing-Lab/openpose/raw/master/doc/media/keypoints_pose_18.png)
 
 Now we say if mode 3 is selected, and mountain _pose function is true, then we want to draw the action to screen. 
 Mountain_pose calculation is defined right up here. We can a add in all our parameters here, angle1, angle 5, head to hand distance for both right and left hands.
