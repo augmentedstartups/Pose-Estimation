@@ -20,7 +20,9 @@ Let’s try to understand how we can calculate the angles between various joints
 Distance =  √(〖(x1-y1)〗^2 〖+  (x2-y2)〗^2 )
 
 Python implementation of formula: 
-Distance = math.sqrt((point1[0]-point2[0])**2 + (point1[1]-point2[1])**2 )
+
+```Distance = math.sqrt((point1[0]-point2[0])**2 + (point1[1]-point2[1])**2 )```
+
 We can approximate the Pose to be a mountain stance based on the angle of the hands relative to the neck and shoulder in combination with the closeness of the wrists. 
 
 ## Code
@@ -45,5 +47,7 @@ If you want you can a debug logger over here.
 # Running the app
 
 Okay so that it all we need. Now you can go ahead and run your app on the any video, You can run it on the video provided. You should know how to execute the command by now.  Select 3 for the yoga pose estimation app. And there you have it. You can see as the woman raises here hands and mountain pose is detected accordingly.
+
+```python run_webcam.py --camera video.mp4 ```
 
 Okay so in the next video we’ll continue with this script but add in mode 4 which will be plank detection. Thank you for watching and we’ll see you in the next lecture.
