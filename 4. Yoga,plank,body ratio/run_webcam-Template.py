@@ -140,40 +140,17 @@ if __name__ == '__main__':
             if len(pose) > 0:
                 # distance calculations
                 
-                # angle calcucations
-               
-                            # draw_str(frame, (20, 220), " Mountain Pose", orange_color, 1.5)
-                            
-                            #if prev_action == 'Unknown' or prev_action == "Unknown_First":
-                            # yoga_duration = time.time()
+                # angle calculations
                             
         elif mode == 4:
             if len(pose) > 0:
                 # distance calculations
                 
-                # angle calcucations
+                # angle calculations
                
-
-
-                            #if prev_action == 'Unknown' or prev_action == "Unknown_First":
-                            #    yoga_duration = time.time()
-                            #logger.debug("*** Plank ***")
                             
         elif mode == 5:
-            sholder_hand_dst_l = int( euclidian(find_point(pose, 5), find_point(pose, 7)))
-            sholder_hand_dst_r = int( euclidian(find_point(pose, 2), find_point(pose, 4)))
-            body_part_dst_l = int( euclidian(find_point(pose, 11), find_point(pose, 13)))
-            body_part_dst_r = int( euclidian(find_point(pose, 8), find_point(pose, 10)))
-            body_ratio_l = round(sholder_hand_dst_l/body_part_dst_l,2)
-            body_ratio_r = sholder_hand_dst_r/body_part_dst_r
-            head_ancle = int( euclidian(find_point(pose, 15), find_point(pose, 13)))
-            hand_hand =  sholder_hand_dst_l + sholder_hand_dst_l + int( euclidian(find_point(pose, 2), find_point(pose, 5)))
-            total_ratio = round(head_ancle/hand_hand,2)
-            # print("hand_to_leg_ratio",body_ratio_l)
-            # print("height_to_width_ratio",total_ratio)
-            draw_str(image, (20, 80), "hand_to_leg_ratio = "+str(body_ratio_l), orange_color, 1.5)
-            draw_str(image, (20, 50), "height_to_width_ratio = "+str(total_ratio), orange_color, 1.5)
-            # logger.debug("hand_to_leg_ratio = %d ,height_to_width_ratio = %d"%d(body_ratio_l,total_ratio))
+
         
         cv2.putText(image,
                     "FPS: %f" % (1.0 / (time.time() - fps_time)),
