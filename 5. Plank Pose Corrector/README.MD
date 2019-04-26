@@ -23,7 +23,7 @@ When planking we have used four angles and two distances to verify the pose. The
 5.	Angle between left hip and left ankle (Used points: 11,12,13)
 6.	Angle between right hip and right ankle (Used points: 8,9,10)
 
-![alt text](https://github.com/CMU-Perceptual-Computing-Lab/openpose/raw/master/doc/media/keypoints_pose_25.png)
+![alt text](https://github.com/CMU-Perceptual-Computing-Lab/openpose/raw/master/doc/media/keypoints_pose_18.png)
 
 We essentially take all these angles and observe if they enter in the range of our predefined thresholds that represent a plank in real life.
 
