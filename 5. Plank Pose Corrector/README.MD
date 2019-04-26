@@ -11,7 +11,7 @@ https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/output.
 
 ## Plank Detection
 
-Hey guys and welcome back, so this a continuation of the last lecture where we detected specific yoga stances. The concept is very similar as to yoga pose detection so we shall just focus on coding the Plank Pose corrector.
+So this a continuation of the last lecture where we detected specific yoga stances. The concept is very similar as to yoga pose detection so we shall just focus on coding the Plank Pose corrector.
 Lets take a look at how it works.
 
 When planking we have used four angles and two distances to verify the pose. The mention angles and distance are:
