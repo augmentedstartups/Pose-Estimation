@@ -1,9 +1,9 @@
-#========================================================
+#=====================================================
 #Modified by: Augmented Startups & Geeky Bee AI
 #Date : 22 April 2019
 #Project: Yoga Angle Corrector/Plank Calc/Body Ratio
 #Tutorial: http://augmentedstartups.info/OpenPose-Course-S
-#=========================================================
+#=====================================================
 import argparse
 import logging
 import time
@@ -14,6 +14,7 @@ import sys
 from tf_pose.estimator import TfPoseEstimator
 from tf_pose.networks import get_graph_path, model_wh
 import math
+
 logger = logging.getLogger('TfPoseEstimator-WebCam')
 logger.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
@@ -24,8 +25,6 @@ logger.addHandler(ch)
 
 fps_time = 0
 def find_point(pose, p):
-    
-    # print(pose)
     for point in pose:
         try:
             body_part = point.body_parts[p]
@@ -48,11 +47,11 @@ def angle_calc(p0, p1, p2 ):
         return 0
     return int(angle)
 def plank( a, b, c, d, e, f):
-    #there are ranges of angle and distance to for plank. 
+    #There are ranges of angle and distance to for plank. 
     '''
         a and b are angles of hands
         c and d are angle of legs
-        e and f are distance between head to ancle because in plank distace will be maximum.
+        e and f are distance between head to ankle because in plank distace will be maximum.
     '''
     if (a in range(50,100) or b in range(50,100)) and (c in range(135,175) or d in range(135,175)) and (e in range(50,250) or f in range(50,250)):
         return True
@@ -60,8 +59,8 @@ def plank( a, b, c, d, e, f):
 def mountain_pose( a, b, c, d, e):
     '''
         a is distance between two wrists
-        b and c are angle between neck,sholder and wrist 
-        e and f are distance between head to ancle because in plank distace will be maximum.
+        b and c are angle between neck,shoulder and wrist 
+        e and f are distance between head to ankle because in plank distace will be maximum.
     '''
     if a in range(20,160) and b in range(60,140) and c in range(60,140) and d in range(100,145) and e in range(100,145):
         return True
@@ -110,16 +109,9 @@ if __name__ == '__main__':
     while True:
         ret_val, image = cam.read()
         i =1
-        # count+=1
-        # if count % 101 == 0:
-        #     continue
-        # logger.debug('image process+')
-        # print(w,h)
         humans = e.inference(image, resize_to_default=(w > 0 and h > 0), upsample_size=args.resize_out_ratio)
         pose = humans
-        # logger.debug('postprocess+')
         image = TfPoseEstimator.draw_humans(image, humans, imgcopy=False)
-        # logger.debug('show+')
         height,width = image.shape[0],image.shape[1]
         if mode == 1:
             hu = len(humans)
@@ -139,42 +131,25 @@ if __name__ == '__main__':
         elif (mode == 3):
             if len(pose) > 0:
                 # distance calculations
+                head_hand_dst_l = int(euclidian(find_point(pose, 0), find_point(pose, 7)))
+                head_hand_dst_r = int(euclidian(find_point(pose, 0), find_point(pose, 4)))
+                m_pose = int( euclidian(find_point(pose, 7), find_point(pose, 4)))
+                # angle calculations
+                angle1 =  angle_calc(find_point(pose, 6), find_point(pose, 5), find_point(pose, 1))
+                angle5 =  angle_calc(find_point(pose,3), find_point(pose,2), find_point(pose,1))
                 
-                # angle calcucations
-               
+                if (mode == 3) and mountain_pose(m_pose, angle1, angle5, head_hand_dst_r, head_hand_dst_l):
                             # draw_str(frame, (20, 220), " Mountain Pose", orange_color, 1.5)
-                            
-                            #if prev_action == 'Unknown' or prev_action == "Unknown_First":
-                            # yoga_duration = time.time()
-                            
-        elif mode == 4:
-            if len(pose) > 0:
-                # distance calculations
-                
-                # angle calcucations
-               
-
-
+                            action = "Mountain Pose"
+                            is_yoga = True
                             #if prev_action == 'Unknown' or prev_action == "Unknown_First":
                             #    yoga_duration = time.time()
-                            #logger.debug("*** Plank ***")
-                            
+                            draw_str(image, (20, 50), action, orange_color, 2)
+                            logger.debug("*** Mountain Pose ***")
+        elif mode == 4:
+            null
         elif mode == 5:
-            sholder_hand_dst_l = int( euclidian(find_point(pose, 5), find_point(pose, 7)))
-            sholder_hand_dst_r = int( euclidian(find_point(pose, 2), find_point(pose, 4)))
-            body_part_dst_l = int( euclidian(find_point(pose, 11), find_point(pose, 13)))
-            body_part_dst_r = int( euclidian(find_point(pose, 8), find_point(pose, 10)))
-            body_ratio_l = round(sholder_hand_dst_l/body_part_dst_l,2)
-            body_ratio_r = sholder_hand_dst_r/body_part_dst_r
-            head_ancle = int( euclidian(find_point(pose, 15), find_point(pose, 13)))
-            hand_hand =  sholder_hand_dst_l + sholder_hand_dst_l + int( euclidian(find_point(pose, 2), find_point(pose, 5)))
-            total_ratio = round(head_ancle/hand_hand,2)
-            # print("hand_to_leg_ratio",body_ratio_l)
-            # print("height_to_width_ratio",total_ratio)
-            draw_str(image, (20, 80), "hand_to_leg_ratio = "+str(body_ratio_l), orange_color, 1.5)
-            draw_str(image, (20, 50), "height_to_width_ratio = "+str(total_ratio), orange_color, 1.5)
-            # logger.debug("hand_to_leg_ratio = %d ,height_to_width_ratio = %d"%d(body_ratio_l,total_ratio))
-        
+            null   
         cv2.putText(image,
                     "FPS: %f" % (1.0 / (time.time() - fps_time)),
                     (10, 10),  cv2.FONT_HERSHEY_SIMPLEX, 0.5,
@@ -190,7 +165,6 @@ if __name__ == '__main__':
         fps_time = time.time()
         if cv2.waitKey(1) == 27:
             break
-        # logger.debug('finished+')
 
     cv2.destroyAllWindows()
 
