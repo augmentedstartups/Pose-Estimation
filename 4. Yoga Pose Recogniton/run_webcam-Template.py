@@ -129,23 +129,12 @@ if __name__ == '__main__':
                     if ((y - y1[-2]) > 30):
                         print("fall detected.",i+1, count)#You can set count for get that your detection is working
         elif (mode == 3):
+            null
             if len(pose) > 0:
                 # distance calculations
-                head_hand_dst_l = int(euclidian(find_point(pose, 0), find_point(pose, 7)))
-                head_hand_dst_r = int(euclidian(find_point(pose, 0), find_point(pose, 4)))
-                m_pose = int( euclidian(find_point(pose, 7), find_point(pose, 4)))
-                # angle calculations
-                angle1 =  angle_calc(find_point(pose, 6), find_point(pose, 5), find_point(pose, 1))
-                angle5 =  angle_calc(find_point(pose,3), find_point(pose,2), find_point(pose,1))
                 
-                if (mode == 3) and mountain_pose(m_pose, angle1, angle5, head_hand_dst_r, head_hand_dst_l):
-                            # draw_str(frame, (20, 220), " Mountain Pose", orange_color, 1.5)
-                            action = "Mountain Pose"
-                            is_yoga = True
-                            #if prev_action == 'Unknown' or prev_action == "Unknown_First":
-                            #    yoga_duration = time.time()
-                            draw_str(image, (20, 50), action, orange_color, 2)
-                            logger.debug("*** Mountain Pose ***")
+                # angle calculations
+               
         elif mode == 4:
             null
         elif mode == 5:
