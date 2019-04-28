@@ -1,4 +1,4 @@
-# Yoga Mountain Pose Detection
+# Extended Yoga Mountain Pose Detection
 
 Hey guys and welcome back, in the next few lectures, we are going to dive deeper into how to use Pose Estimation to identify actions in Yoga, correct planking postures and approximate body ratios. We’ll first start off this lecture with Yoga Pose identification, in this case, we shall identify a particular stance called Mountain Pose. If the stance is performed correctly, it will output text to screen of what Pose has been performed. This app can be particularly useful for getting real-time feedback on your exercises whether it may be yoga, tai chi, weight lifting, palates amongst others.
 
@@ -18,6 +18,7 @@ Let’s try to understand how we can calculate the angles between various joints
 	Using the Euclidean distance formula: 
 	
 Distance =  √(〖(x1-y1)〗^2 〖+  (x2-y2)〗^2 )
+![alt text](https://lyfat.files.wordpress.com/2012/05/euclidean.png?w=304&h=280)
 
 Python implementation of formula: 
 
