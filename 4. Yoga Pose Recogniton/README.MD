@@ -17,7 +17,6 @@ Let’s try to understand how we can calculate the angles between various joints
 	To accomplish this we have also find Euclidean distances between left wrist to right wrist and head to wrist.
 	Using the Euclidean distance formula: 
 	
-Distance =  √(〖(x1-y1)〗^2 〖+  (x2-y2)〗^2 )
 ![alt text](https://lyfat.files.wordpress.com/2012/05/euclidean.png?w=304&h=280)
 
 Python implementation of formula: 
