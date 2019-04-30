@@ -20,6 +20,8 @@ To detect fall we have used y coordinate of head. Coordinates of head in form of
  y1.append(y) will store y coordinate to compare with previous point. We have used try and except because many time pose estimator can't predict head point
 *	human.body_parts[0] is for head point coordinates. We also get the x and y coordinates relative to image
 
+![alt text](https://github.com/CMU-Perceptual-Computing-Lab/openpose/raw/master/doc/media/keypoints_pose_18.png)
+
 Then we type in this line which is it's distance between frame and comparing it with threshold value. If this condition is true, then a fall is detected and we can print it to console.
 
 Lets run our app and see what we get.
