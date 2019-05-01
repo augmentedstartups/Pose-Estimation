@@ -173,8 +173,8 @@ if __name__ == '__main__':
             Leg_l = int( euclidian(find_point(pose, 11), find_point(pose, 13))) #Left leg
             
             try:
-                LBR_l 		= round(Leg_l/Total_body_r,2) 
-                LBR_r 		= round(Leg_r/Total_body_l,2)  
+                LBR_l 		= round(Leg_l/Total_body_l,2) 
+                LBR_r 		= round(Leg_r/Total_body_r,2)  
                 average_ratio 		= round((LBR_l+LBR_r)/2,3)
             except:
                 pass
