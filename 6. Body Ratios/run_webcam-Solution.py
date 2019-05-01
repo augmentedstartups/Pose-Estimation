@@ -167,13 +167,13 @@ if __name__ == '__main__':
                             draw_str(image, (20, 50), " Plank", orange_color, 2)
                             logger.debug("*** Plank ***")
         elif mode == 5:
-            Total_body_r = int( euclidian(find_point(pose, 0), find_point(pose, 10)))   #Left height
+            Total_body_r = int( euclidian(find_point(pose, 0), find_point(pose, 10)))   #Right height
             Total_body_l = int( euclidian(find_point(pose, 0), find_point(pose, 13)))   #Left height
-            Leg_r = int( euclidian(find_point(pose, 8), find_point(pose, 10)))   #Right hand
+            Leg_r = int( euclidian(find_point(pose, 8), find_point(pose, 10)))   #Right leg
             Leg_l = int( euclidian(find_point(pose, 11), find_point(pose, 13))) #Left leg
             
             try:
-                LBR_l 		= round(Leg_r/Total_body_r,2) 
+                LBR_l 		= round(Leg_l/Total_body_r,2) 
                 LBR_r 		= round(Leg_r/Total_body_l,2)  
                 average_ratio 		= round((LBR_l+LBR_r)/2,3)
             except:
